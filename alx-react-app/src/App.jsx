@@ -1,4 +1,5 @@
 import WelcomeMessage from './components/WelcomeMessage';
+import UserProfile from './components/UserProfile';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
