@@ -48,3 +48,4 @@ import { useRecipeStore } from './recipeStore';
       </form>
     );
   };
+  export default RecipeList;
