@@ -27,7 +27,7 @@ const FormikForm = () => {
             <ErrorMessage name="username" component="div" style={{ color: 'red' }} />
           </div>
           <div>
-            <label>Email:</label>
+            <label>email:</label>
             <Field type="email" name="email" />
             <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
           </div>
