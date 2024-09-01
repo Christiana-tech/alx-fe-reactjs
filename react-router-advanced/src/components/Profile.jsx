@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import ProfileDetails from '../ProfileDetails';
 import ProfileSettings from '../ProfileSettings';
 
+
 function Profile() {
   return (
     <div>

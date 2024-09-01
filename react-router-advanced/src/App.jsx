@@ -5,12 +5,20 @@ import Profile from './components/Profile';
 import BlogPost from './components/BlogPost';
 
 function App() {
+  
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile/*" element={<Profile />} />
-        <Route path="/blog/:postId" element={<BlogPost />} />
+        <Route
+          path="/profile/*"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+         <Route path="/blog/:postId" element={<BlogPost />} />
       </Routes>
     </Router>
   );
