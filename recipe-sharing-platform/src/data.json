@@ -1,0 +1,25 @@
+[
+    {
+      "id": 1,
+      "title": "Beef Stroganoff",
+      "summary": "A hearty Russian dish made with sautéed pieces of beef served in a rich sour cream sauce.",
+      "image": "https://via.placeholder.com/150"
+     
+      
+    },
+    {
+      "id": 2,
+      "title": "Vegan Buddha Bowl",
+      "summary": "A nutritious bowl filled with quinoa, roasted veggies, and topped with tahini dressing.",
+      "image": "https://via.placeholder.com/150"
+      
+    },
+    {
+      "id": 3,
+      "title": "Lemon Garlic Shrimp",
+      "summary": "Quick and easy shrimp cooked with lemon, garlic, and fresh parsley, served over rice.",
+      "image": "https://via.placeholder.com/150"
+      
+    }
+  ]
+  
