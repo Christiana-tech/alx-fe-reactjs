@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 
 function AddRecipeForm() {
@@ -9,30 +10,30 @@ function AddRecipeForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
+    // Validation
     if (!title || !ingredients || !instructions) {
       setError('All fields are required');
       return;
     }
 
-    
+    // Further validation: Check that ingredients are in a list format
     const ingredientList = ingredients.split('\n');
     if (ingredientList.length < 2) {
       setError('Please provide at least two ingredients');
       return;
     }
 
-    
+    // Create the new recipe object
     const newRecipe = {
       title,
       ingredients: ingredientList,
-      instructions: instructions.split('\n'),
+      instructions: instructions.split('\n'), // Split instructions into an array
     };
 
-    
+    // Here you would typically send the newRecipe to your server or state management
     console.log(newRecipe);
     
-    
+    // Reset the form
     setTitle('');
     setIngredients('');
     setInstructions('');
