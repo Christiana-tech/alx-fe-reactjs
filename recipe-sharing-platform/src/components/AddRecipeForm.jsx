@@ -7,15 +7,34 @@ function AddRecipeForm() {
   const [steps, setSteps] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    // Validation
-    if (!title || !ingredients || !instructions) {
-      setError('All fields are required');
-      return;
-    }
-
+    const validate = () => {
+      const newErrors = {};
+      
+      if (!title) {
+        newErrors.title = 'Title is required';
+      }
+      if (!ingredients) {
+        newErrors.ingredients = 'Ingredients are required';
+      } else if (ingredients.split('\n').length < 2) {
+        newErrors.ingredients = 'Please provide at least two ingredients';
+      }
+      if (!instructions) {
+        newErrors.instructions = 'Instructions are required';
+      }
+  
+      return newErrors;
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      // Validate form fields
+      const formErrors = validate();
+      if (Object.keys(formErrors).length > 0) {
+        setErrors(formErrors);
+        return;
+      }
+  
     // Further validation: Check that ingredients are in a list format
     const ingredientList = ingredients.split('\n');
     if (ingredientList.length < 2) {
@@ -27,7 +46,7 @@ function AddRecipeForm() {
     const newRecipe = {
       title,
       ingredients: ingredientList,
-      instructions: instructions.split('\n'), // Split instructions into an array
+      Steps: Steps.split('\n'), // Split instructions into an array
     };
 
     // Here you would typically send the newRecipe to your server or state management
@@ -36,7 +55,7 @@ function AddRecipeForm() {
     // Reset the form
     setTitle('');
     setIngredients('');
-    setInstructions('');
+    setSteps('');
     setError('');
   };
 
@@ -68,13 +87,13 @@ function AddRecipeForm() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="instructions">Instructions (one per line)</label>
+          <label className="block text-gray-700 mb-2" htmlFor="Steps">Steps (one per line)</label>
           <textarea
             className="w-full p-2 border border-gray-300 rounded"
-            id="instructions"
+            id="Steps"
             rows="4"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={Steps}
+            onChange={(e) => setSteps(e.target.value)}
             required
           />
         </div>
