@@ -4,8 +4,8 @@ import { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [ Steps, setSteps] = useState('');
-  const [error, setErrors] = useState('');
+  const [ ste, setSteps] = useState('');
+  const [error, setError] = useState('');
 
 
     const validate = () => {
@@ -19,8 +19,8 @@ function AddRecipeForm() {
       } else if (ingredients.split('\n').length < 2) {
         newErrors.ingredients = 'Please provide at least two ingredients';
       }
-      if (!Steps) {
-        newErrors.Steps = 'Steps are required';
+      if (!instructions) {
+        newErrors.instructions = 'Instructions are required';
       }
   
       return newErrors;
@@ -38,7 +38,7 @@ function AddRecipeForm() {
     // Further validation: Check that ingredients are in a list format
     const ingredientList = ingredients.split('\n');
     if (ingredientList.length < 2) {
-      setErrors('Please provide at least two ingredients');
+      setError('Please provide at least two ingredients');
       return;
     }
 
@@ -56,7 +56,7 @@ function AddRecipeForm() {
     setTitle('');
     setIngredients('');
     setSteps('');
-    setErrors('');
+    setError('');
   };
 
   return (
