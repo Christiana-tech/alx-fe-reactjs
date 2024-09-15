@@ -3,13 +3,13 @@ import { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [Steps, setSteps] = useState('');
-  const [errors, setErrors] = useState({}); // State to store validation errors
+  const [steps, setSteps] = useState('');
+  const [errors, setErrors] = useState({});
 
   // Validation function
   const validate = () => {
     const newErrors = {};
-    
+
     if (!title) {
       newErrors.title = 'Title is required';
     }
@@ -18,8 +18,8 @@ function AddRecipeForm() {
     } else if (ingredients.split('\n').length < 2) {
       newErrors.ingredients = 'Please provide at least two ingredients';
     }
-    if (!instructions) {
-      newErrors.instructions = 'Instructions are required';
+    if (!steps) {
+      newErrors.steps = 'Steps are required';
     }
 
     return newErrors;
@@ -35,20 +35,19 @@ function AddRecipeForm() {
       return;
     }
 
-    // If valid, create the new recipe object
+    // Process new recipe submission
     const newRecipe = {
       title,
       ingredients: ingredients.split('\n'),
-      instructions: instructions.split('\n'),
+      steps: steps.split('\n'), // Changed to steps
     };
 
-    // Here you would typically send the newRecipe to your server or state management
     console.log(newRecipe);
 
-    // Reset form fields and errors
+    // Reset the form after submission
     setTitle('');
     setIngredients('');
-    setSteps('');
+    setSteps(''); // Changed to steps
     setErrors({});
   };
 
@@ -65,7 +64,7 @@ function AddRecipeForm() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          {errors.title && <p className="text-red-500">{errors.title}</p>} {/* Display title error */}
+          {errors.title && <p className="text-red-500">{errors.title}</p>}
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="ingredients">Ingredients (one per line)</label>
@@ -76,18 +75,18 @@ function AddRecipeForm() {
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
           />
-          {errors.ingredients && <p className="text-red-500">{errors.ingredients}</p>} {/* Display ingredients error */}
+          {errors.ingredients && <p className="text-red-500">{errors.ingredients}</p>}
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="instructions">Instructions (one per line)</label>
+          <label className="block text-gray-700 mb-2" htmlFor="steps">Steps (one per line)</label>
           <textarea
             className="w-full p-2 border border-gray-300 rounded"
-            id="Steps"
+            id="steps"
             rows="4"
-            value={instructions}
+            value={steps}
             onChange={(e) => setSteps(e.target.value)}
           />
-          {errors.instructions && <p className="text-red-500">{errors.instructions}</p>} {/* Display instructions error */}
+          {errors.steps && <p className="text-red-500">{errors.steps}</p>}
         </div>
         <button
           className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
