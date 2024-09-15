@@ -4,7 +4,7 @@ import { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [steps, setSteps] = useState('');
+  const [ ste, setSteps] = useState('');
   const [error, setError] = useState('');
 
 
@@ -46,7 +46,7 @@ function AddRecipeForm() {
     const newRecipe = {
       title,
       ingredients: ingredientList,
-      Steps: Steps.split('\n'), // Split instructions into an array
+      Steps: Steps.split('\n'), 
     };
 
     // Here you would typically send the newRecipe to your server or state management
