@@ -82,7 +82,7 @@ function AddRecipeForm() {
           <label className="block text-gray-700 mb-2" htmlFor="instructions">Instructions (one per line)</label>
           <textarea
             className="w-full p-2 border border-gray-300 rounded"
-            id="instructions"
+            id="Steps"
             rows="4"
             value={instructions}
             onChange={(e) => setSteps(e.target.value)}
