@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
     [
         {
           "id": 1,
@@ -44,3 +45,92 @@
         }
       ]
       
+=======
+    {
+      "id": 1,
+      "title": "Beef Stroganoff",
+      "summary": "A hearty Russian dish made with sautéed pieces of beef served in a rich sour cream sauce.",
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+      "500g beef sirloin, sliced thinly",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 cup mushrooms, sliced",
+      "1 cup beef broth",
+      "1 cup sour cream",
+      "1 tablespoon Dijon mustard",
+      "2 tablespoons flour",
+      "2 tablespoons olive oil",
+      "Salt and pepper to taste",
+      "Egg noodles (for serving)"
+    ],
+    "Steps": [
+      "Heat olive oil in a large pan over medium heat. Add the beef slices and cook until browned. Remove and set aside.",
+      "In the same pan, add onions and garlic. Sauté until soft.",
+      "Add the mushrooms and cook until they release their liquid.",
+      "Sprinkle the flour over the mixture and stir well.",
+      "Pour in the beef broth and simmer until it thickens slightly.",
+      "Stir in the sour cream, Dijon mustard, and cooked beef. Cook for another 5 minutes until heated through.",
+      "Season with salt and pepper to taste.",
+      "Serve over egg noodles."
+    ]
+      
+     
+      
+    },
+    {
+      "id": 2,
+      "title": "Vegan Buddha Bowl",
+      "summary": "A nutritious bowl filled with quinoa, roasted veggies, and topped with tahini dressing.",
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+      "1 cup quinoa, cooked",
+      "1 sweet potato, cubed",
+      "1 cup broccoli florets",
+      "1 cup chickpeas, drained and rinsed",
+      "1 avocado, sliced",
+      "2 tablespoons olive oil",
+      "1 tablespoon tahini",
+      "1 tablespoon lemon juice",
+      "1 tablespoon water",
+      "1 clove garlic, minced",
+      "Salt and pepper to taste"
+    ],
+    "Steps": [
+      "Preheat the oven to 200°C (400°F).",
+      "Toss the sweet potatoes and broccoli with olive oil, salt, and pepper. Spread on a baking sheet and roast for 20-25 minutes until tender.",
+      "In a small bowl, mix tahini, lemon juice, water, and garlic to make the dressing.",
+      "Assemble the bowl by adding quinoa, roasted sweet potatoes, broccoli, chickpeas, and avocado slices.",
+      "Drizzle with tahini dressing and serve."
+    ]
+      
+    },
+    {
+      "id": 3,
+      "title": "Lemon Garlic Shrimp",
+      "summary": "Quick and easy shrimp cooked with lemon, garlic, and fresh parsley, served over rice.",
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+      "500g shrimp, peeled and deveined",
+      "3 cloves garlic, minced",
+      "1 lemon, juiced and zested",
+      "2 tablespoons olive oil",
+      "1 tablespoon butter",
+      "1 tablespoon fresh parsley, chopped",
+      "1/2 teaspoon red pepper flakes (optional)",
+      "Salt and pepper to taste",
+      "Cooked rice (for serving)"
+    ],
+    "Steps": [
+      "Heat olive oil and butter in a large pan over medium heat.",
+      "Add garlic and red pepper flakes (if using) and sauté for 1 minute until fragrant.",
+      "Add the shrimp and cook for 2-3 minutes on each side until pink and opaque.",
+      "Stir in the lemon juice and zest, and cook for another 1-2 minutes.",
+      "Season with salt and pepper, then sprinkle fresh parsley over the shrimp.",
+      "Serve over cooked rice."
+    ]
+      
+    }
+  ]
+  
+>>>>>>> 2495d32e708fd90a5b432911e300ca7132ebc8d2
