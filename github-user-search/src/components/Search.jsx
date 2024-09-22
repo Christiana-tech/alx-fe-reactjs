@@ -16,7 +16,7 @@ const Search = ({ fetchUserData }) => {
       const data = await fetchUserData(username);
       setUserData(data);
     } catch (err) {
-      setError('Looks like we cant find the user');
+      setError('Looks like we can’t find the user');
     } finally {
       setLoading(false);
     }
@@ -29,7 +29,7 @@ const Search = ({ fetchUserData }) => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Login"
+          placeholder="Search GitHub Username"
         />
         <button type="submit">Search</button>
       </form>
