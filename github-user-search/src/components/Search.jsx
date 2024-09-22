@@ -29,7 +29,7 @@ const Search = ({ fetchUserData }) => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Search GitHub Username"
+          placeholder="login"
         />
         <button type="submit">Search</button>
       </form>
