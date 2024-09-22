@@ -7,6 +7,7 @@ function App() {
     <div>
       <h1>GitHub User Search</h1>
       <Search fetchUserData={fetchUserData} />
+    
     </div>
   );
 }

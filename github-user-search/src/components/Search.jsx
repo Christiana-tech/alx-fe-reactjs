@@ -15,15 +15,32 @@ const Search = ({ fetchUserData }) => {
     setError(null);
     setUserData(null);
 
-    const loadMoreUsers = async () => {
-  const moreData = await fetchUserData({ username, location, minRepos, page: page + 1 });
-  setUserData((prevData) => ({
-    ...moreData,
-    items: [...prevData.items, ...moreData.items],
-  }));
-  setPage(page + 1);
-};
+    try {
+      const data = await fetchUserData({ username, location, minRepos, page: 1 });
+      setUserData(data);
+      setPage(1); // Reset page number to 1 after a new search
+    } catch (err) {
+      setError('Looks like we can’t find the user');
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  const loadMoreUsers = async () => {
+    setLoading(true);
+    try {
+      const moreData = await fetchUserData({ username, location, minRepos, page: page + 1 });
+      setUserData((prevData) => ({
+        ...moreData,
+        items: [...prevData.items, ...moreData.items],
+      }));
+      setPage(page + 1);
+    } catch (err) {
+      setError('Error loading more users');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -32,7 +49,7 @@ const Search = ({ fetchUserData }) => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="login"
+          placeholder="Username"
           className="border p-2 w-full max-w-lg"
         />
         <input
@@ -49,8 +66,8 @@ const Search = ({ fetchUserData }) => {
           placeholder="Minimum Repositories"
           className="border p-2 w-full max-w-lg"
         />
-        <button onClick={loadMoreUsers} className="bg-blue-500 text-white py-2 px-4 rounded">
-          Load More
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
+          Search
         </button>
       </form>
 
@@ -76,10 +93,14 @@ const Search = ({ fetchUserData }) => {
               </li>
             ))}
           </ul>
+          {/* Load More Button */}
+          <button onClick={loadMoreUsers} className="bg-blue-500 text-white py-2 px-4 rounded mt-4">
+            Load More
+          </button>
         </div>
       )}
     </div>
   );
-}};
+};
 
 export default Search;
